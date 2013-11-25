@@ -43,7 +43,7 @@
 + (void)registerNSUUID
 {
 	[[OCUDLManager defaultManager] registerSuffix:@"uuid"
-										 forBlock:^id(NSString *literal, NSString *prefix) {
+										 forBlock:^id(NSString *literal, NSString *suffix) {
 											 return [[NSUUID alloc] initWithUUIDString:literal];
 										 }];
 }
@@ -142,7 +142,7 @@
 + (void)registerUIImage
 {
 	[[OCUDLManager defaultManager] registerSuffix:@".img"
-										 forBlock:^id(NSString *literal, NSString *prefix) {
+										 forBlock:^id(NSString *literal, NSString *suffix) {
 											 return [UIImage imageNamed:literal];
 										 }];
 }
@@ -150,7 +150,7 @@
 + (void)registerUINib
 {
 	[[OCUDLManager defaultManager] registerSuffix:@".xib"
-										 forBlock:^id(NSString *literal, NSString *prefix) {
+										 forBlock:^id(NSString *literal, NSString *suffix) {
 											 return [UINib nibWithNibName:literal bundle:nil];
 										 }];
 }
@@ -159,7 +159,7 @@
 + (void)registerUIStoryboard
 {
 	[[OCUDLManager defaultManager] registerSuffix:@".storyboard"
-										 forBlock:^id(NSString *literal, NSString *prefix) {
+										 forBlock:^id(NSString *literal, NSString *suffix) {
 											 return [UIStoryboard storyboardWithName:literal bundle:nil];
 										 }];
 }
